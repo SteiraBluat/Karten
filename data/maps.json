@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "name": "Blender",
+    "priceWithAc": 1000,
+    "priceWithoutAc": 0,
+    "sizeX": 1,
+    "sizeY": 1,
+    "builderIds": [0],
+    "creatorLink": "blender.org"
+  },
+  {
+    "id": 2,
+    "name": "Anime Girl",
+    "priceWithAc": 5000,
+    "priceWithoutAc": 7000,
+    "sizeX": 4,
+    "sizeY": 5,
+    "builderIds": [0],
+    "creatorLink": ""
+  },
+  {
+    "id": 3,
+    "name": "Genshin Impact",
+    "priceWithAc": 20000,
+    "priceWithoutAc": 0,
+    "sizeX": 4,
+    "sizeY": 4,
+    "builderIds": [0],
+    "creatorLink": "genshin.hoyoverse.com/de"
+  },
+  {
+    "id": 4,
+    "name": "Neil Armstrong",
+    "priceWithAc": 10000,
+    "priceWithoutAc": 0,
+    "sizeX": 2,
+    "sizeY": 4,
+    "builderIds": [0],
+    "creatorLink": "nasa.gov"
+  },
+  {
+    "id": 5,
+    "name": "Test",
+    "priceWithAc": 10000,
+    "priceWithoutAc": 0,
+    "sizeX": 2,
+    "sizeY": 4,
+    "builderIds": [0, 1],
+    "creatorLink": "test.org"
+  }
+]
