@@ -38,15 +38,5 @@
     "sizeY": 4,
     "builderIds": [0],
     "creatorLink": "nasa.gov"
-  },
-  {
-    "id": 5,
-    "name": "Test",
-    "priceWithAc": 10000,
-    "priceWithoutAc": 0,
-    "sizeX": 2,
-    "sizeY": 4,
-    "builderIds": [0, 1],
-    "creatorLink": "test.org"
   }
 ]

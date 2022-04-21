@@ -58,16 +58,23 @@ function mapToString(map)
         "<div class='form-control'style='margin-bottom: 20px'>" +
         "   <table class='table table-striped'>" +
         "       <tr><th colspan=\"2\">" + map.name + "</th></tr>" +
-        "       <tr>" +
-        "           <td>Nr.:</td>" +
-        "           <td>" + map.id + "</td>" +
-        "       </tr>" +
+                getMapId(map) +
                 getMapPrice(map) +
                 getMapSize(map) +
                 getMapBuilders(map) +
                 getMapCredits(map) +
         "   </table>" +
         "</div>";
+    return result;
+}
+
+function getMapId(map)
+{
+    let result = "" +
+        "<tr>" +
+        "   <td>Nr.:</td>" +
+        "   <td>" + map.id + "</td>" +
+        "</tr>";
     return result;
 }
 
@@ -118,7 +125,6 @@ function getMapSize(map)
 
 function getMapBuilders(map)
 {
-    console.log(allBuilders);
     let result = "";
     let builders = map.builderIds;
 
@@ -152,6 +158,7 @@ function getBuilderById(id)
         if(allBuilders[i].id === id)
         {
             builder = allBuilders[i].name;
+            break;
         }
     }
     return builder;
@@ -162,6 +169,7 @@ function getMapCredits(map)
     return "" +
         "<tr>" +
         "   <td>Credits:</td>" +
-        "   <td><a href='" + "https://" + map.creatorLink + "' target='_blank' rel='noopener noreferrer'>" + map.creatorLink + "</a></td>" +
+        "   <td><a href='" + "https://" + map.creatorLink + "' target='_blank' rel='noopener noreferrer'>" +
+                    map.creatorLink + "</a></td>" +
         "</tr>";
 }
