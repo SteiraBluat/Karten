@@ -87,24 +87,32 @@ function getMapId(map)
 function getMapPrice(map)
 {
     let result = "";
+    let price;
 
-    if(map.priceWithAc !== 0)
+    if(map.priceWithoutAc === 0)
     {
-        let price = map.priceWithAc.toLocaleString("en").replaceAll(",", ".") + "$";
+        price = map.priceWithAc.toLocaleString("en").replaceAll(",", ".") + "$";
+        result += "" +
+            "<tr style='border-bottom: 3px solid #555'>" +
+            "   <td>Preis mit AC:</td>" +
+            "   <td>" + price + "</td>" +
+            "</tr>";
+    }
+    else
+    {
+        price = map.priceWithAc.toLocaleString("en").replaceAll(",", ".") + "$";
         result += "" +
             "<tr>" +
             "   <td>Preis mit AC:</td>" +
             "   <td>" + price + "</td>" +
-            "</tr>"
-    }
-    if(map.priceWithoutAc !== 0)
-    {
-        let price = map.priceWithoutAc.toLocaleString("en").replaceAll(",", ".") + "$";
+            "</tr>";
+
+        price = map.priceWithoutAc.toLocaleString("en").replaceAll(",", ".") + "$";
         result += "" +
-            "<tr>" +
+            "<tr style='border-bottom: 3px solid #555'>" +
             "   <td>Preis ohne AC:</td>" +
             "   <td>" + price + "</td>" +
-            "</tr>"
+            "</tr>";
     }
     return result;
 }
@@ -122,7 +130,7 @@ function getMapSize(map)
         "   <td>Höhe:</td>" +
         "   <td>" + map.sizeY + "</td>" +
         "</tr>" +
-        "<tr>" +
+        "<tr style='border-bottom: 3px solid #555'>" +
         "   <td>Breite:</td>" +
         "   <td>" + map.sizeX + "</td>" +
         "</tr>";
