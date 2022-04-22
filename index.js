@@ -247,3 +247,23 @@ function clearSearchField()
     let field = document.getElementById("searchId");
     field.value = "";
 }
+
+function newestFirst()
+{
+    do
+    {
+        allMaps.reverse();
+    }
+    while(allMaps[0].id === 1);
+    showAllMaps();
+}
+
+function oldestFirst()
+{
+    do
+    {
+        allMaps.reverse();
+    }
+    while(allMaps[0].id !== 1);
+    showAllMaps();
+}

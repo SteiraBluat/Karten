@@ -38,9 +38,14 @@
 
             <form class="d-flex">
                 <button class="btn btn-primary" type="button" onclick="showAllMaps()"
-                        style="width: 200px; margin-right: 50px">Alle Karten</button>
+                        style="width: 200px; margin-right: 10px">Alle Karten</button>
+                <button class="btn btn-secondary" type="button" onclick="newestFirst()"
+                        style="width: 200px; margin-right: 10px">Neueste Zuerst</button>
+                <button class="btn btn-secondary" type="button" onclick="oldestFirst()"
+                        style="width: 200px; margin-right: 40px">Älteste Zuerst</button>
 
-                <input class="form-control me-2" id="searchId" type="text" placeholder="Nach Nr. Suchen" name="searchField">
+                <input class="form-control me-2" id="searchId" type="text" placeholder="Nach Nr. Suchen"
+                       name="searchField", style="width: 30%" onkeypress="searchMap(); return event.keyCode != 13">
                 <button class="btn btn-primary" type="button" onclick="searchMap()">Suchen</button>
             </form>
         </div>
