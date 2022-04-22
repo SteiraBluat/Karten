@@ -70,8 +70,13 @@ function mapToString(map)
 
 function getMapImage(map)
 {
-    return "<div style='text-align: center; margin-bottom: 10px'><img src='" + imgDir + "/" + map.id +
-        ".jpg' class='mapImg' height='300px' alt='Bild'></div>";
+    let imgUrl = imgDir + "/" + map.id + ".jpg";
+    return "" +
+        "<div style='text-align: center; margin-bottom: 10px'>" +
+        "   <a href='" + imgUrl + "' target=\"_blank\" rel=\"noopener noreferrer\">" +
+        "       <img src='" + imgUrl + "' class='mapImg' height='300px' alt='Bild'>" +
+        "   </a>" +
+        "</div>";
 }
 
 function getMapId(map)
