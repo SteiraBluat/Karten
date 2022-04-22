@@ -71,7 +71,7 @@ function mapToString(map)
 function getMapImage(map)
 {
     return "<div style='text-align: center; margin-bottom: 10px'><img src='" + imgDir + "/" + map.id +
-        ".png' class='mapImg' height='300px' alt='Bild'></div>";
+        ".jpg' class='mapImg' height='300px' alt='Bild'></div>";
 }
 
 function getMapId(map)
