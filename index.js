@@ -7,8 +7,17 @@ var allBuilders = [];
 
 function onLoad()
 {
-    loadBuilders();
-    loadMaps();
+    loadMapsAndBuilders();
+}
+
+function loadMapsAndBuilders()
+{
+    fetch(builderJson)
+        .then(response => response.json())
+        .then(data => {
+            allBuilders = data;
+            loadMaps();
+        });
 }
 
 function loadMaps()
@@ -21,14 +30,6 @@ function loadMaps()
         });
 }
 
-function loadBuilders()
-{
-    fetch(builderJson)
-        .then(response => response.json())
-        .then(data => {
-            allBuilders = data;
-        });
-}
 
 function displayMaps(maps)
 {
