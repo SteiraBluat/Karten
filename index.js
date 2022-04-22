@@ -1,6 +1,6 @@
-const mapsJson = "/data/maps.json";
-const builderJson = "/data/builder.json";
-const imgDir = "/images/maps";
+const mapsJson = "./data/maps.json";
+const builderJson = "./data/builder.json";
+const imgDir = "./images/maps";
 
 var allMaps;
 var allBuilders = [];
