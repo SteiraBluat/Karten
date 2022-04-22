@@ -37,8 +37,11 @@
             </ul>
 
             <form class="d-flex">
-                <input class="form-control me-2" type="text" placeholder="Nach Nr. Suchen">
-                <button class="btn btn-primary" type="button">Suchen</button>
+                <button class="btn btn-primary" type="button" onclick="showAllMaps()"
+                        style="width: 200px; margin-right: 50px">Alle Karten</button>
+
+                <input class="form-control me-2" id="searchId" type="text" placeholder="Nach Nr. Suchen" name="searchField">
+                <button class="btn btn-primary" type="button" onclick="searchMap()">Suchen</button>
             </form>
         </div>
     </div>
@@ -46,7 +49,8 @@
 
 <!-- Main Content -->
 <div class="container-fluid" style="width: 95%">
-    <h1 style="padding-bottom: 20px">Karten</h1>
+    <h1 id="mapsHeading" style="padding-bottom: 20px">Alle Karten</h1>
+    <h2 id="searchError" style="color: #fb0000; display: none">Test</h2>
 
     <div id="maps" style="margin-bottom: 20px"></div>
 </div>

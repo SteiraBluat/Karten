@@ -180,3 +180,70 @@ function getMapCredits(map)
                     map.creatorLink + "</a></td>" +
         "</tr>";
 }
+
+function showAllMaps()
+{
+    displayMaps(allMaps);
+    toggleSearchError(false);
+    changeMapsHeading("Alle Karten")
+    clearSearchField();
+}
+
+function searchMap()
+{
+    let id = parseInt(document.getElementById("searchId").value);
+
+    if(typeof id === "number" && !isNaN(id))
+    {
+        let map;
+
+        console.log(map)
+        for(let i = 0;i < allMaps.length;i++)
+        {
+            if(allMaps[i].id === id)
+            {
+                map = allMaps[i];
+                break;
+            }
+        }
+
+        if(map !== undefined)
+        {
+            let maps = [map];
+            displayMaps(maps);
+            toggleSearchError(false);
+            changeMapsHeading("Karte mit der Nr. " + id);
+        }
+        else
+        {
+            toggleSearchError(true, "Keine Karte mit der Nr. " + id + " gefunden!");
+        }
+        clearSearchField();
+    }
+}
+
+function changeMapsHeading(text)
+{
+    let heading = document.getElementById("mapsHeading");
+    heading.innerHTML = text;
+}
+
+function toggleSearchError(show, text)
+{
+    let error = document.getElementById("searchError");
+    error.innerHTML = text;
+    if(show)
+    {
+        error.style.display = "contents";
+    }
+    else
+    {
+        error.style.display = "none";
+    }
+}
+
+function clearSearchField()
+{
+    let field = document.getElementById("searchId");
+    field.value = "";
+}
