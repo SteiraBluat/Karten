@@ -16,7 +16,6 @@ function loadMaps()
     fetch(mapsJson)
         .then(response => response.json())
         .then(data => {
-            //console.log(data);
             allMaps = data;
             displayMaps(data);
         });
@@ -27,7 +26,6 @@ function loadBuilders()
     fetch(builderJson)
         .then(response => response.json())
         .then(data => {
-            //console.log(data);
             allBuilders = data;
         });
 }
@@ -197,7 +195,6 @@ function searchMap()
     {
         let map;
 
-        console.log(map)
         for(let i = 0;i < allMaps.length;i++)
         {
             if(allMaps[i].id === id)
