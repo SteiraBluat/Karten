@@ -53,7 +53,7 @@ function displayMaps(maps)
 function mapToString(map)
 {
     let result = "" +
-        "<div class='form-control'style='margin-bottom: 20px; height: 98%'>" +
+        "<div class='form-control' style='margin-bottom: 20px; height: 98%'>" +
             getMapImage(map) +
         "   <table class='table table-striped'>" +
         "       <tr><th colspan=\"2\">" + map.name + "</th></tr>" +
@@ -70,7 +70,7 @@ function mapToString(map)
 function getMapImage(map)
 {
     return "<div style='text-align: center; margin-bottom: 10px'><img src='" + imgDir + "/" + map.id +
-        ".png' class='mapImg' height='300px'></div>";
+        ".png' class='mapImg' height='300px' alt='Bild'></div>";
 }
 
 function getMapId(map)
