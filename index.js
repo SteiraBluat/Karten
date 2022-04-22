@@ -3,7 +3,7 @@ const builderJson = "/data/builder.json";
 const imgDir = "/images/maps";
 
 var allMaps;
-var allBuilders;
+var allBuilders = [];
 
 function onLoad()
 {
@@ -56,6 +56,7 @@ function mapToString(map)
 {
     let result = "" +
         "<div class='form-control'style='margin-bottom: 20px'>" +
+            getMapImage(map) +
         "   <table class='table table-striped'>" +
         "       <tr><th colspan=\"2\">" + map.name + "</th></tr>" +
                 getMapId(map) +
@@ -66,6 +67,12 @@ function mapToString(map)
         "   </table>" +
         "</div>";
     return result;
+}
+
+function getMapImage(map)
+{
+    return "<div style='text-align: center; margin-bottom: 10px'><img src='" + imgDir + "/" + map.id +
+        ".png' style='max-height: 1000px; max-width: 100%' height='100%'></div>";
 }
 
 function getMapId(map)
