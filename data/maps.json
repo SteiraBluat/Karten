@@ -7,7 +7,9 @@
     "sizeX": 1,
     "sizeY": 1,
     "builderIds": [0],
-    "creatorLink": "blender.org"
+    "creatorName": "Blender",
+    "creatorLink": "blender.org",
+    "source": "www.blender.org/wp-content/uploads/2020/12/blender_logo_icon_white_socket.png"
   },
   {
     "id": 2,
@@ -17,7 +19,9 @@
     "sizeX": 4,
     "sizeY": 5,
     "builderIds": [0],
-    "creatorLink": ""
+    "creatorName": "viral-today (?)",
+    "creatorLink": "viral-today-7757.blogspot.com/2021/10/anime-characters-girls-cute-1.html",
+    "source": "i0.wp.com/w7.pngwing.com/pngs/572/152/png-transparent-female-animated-character-anime-girl-desktop-cute-girl-purple-cg-artwork-black-hair.png"
   },
   {
     "id": 3,
@@ -27,7 +31,9 @@
     "sizeX": 4,
     "sizeY": 4,
     "builderIds": [0],
-    "creatorLink": "genshin.hoyoverse.com/de"
+    "creatorName": "Genshin Impact",
+    "creatorLink": "genshin.hoyoverse.com/de",
+    "source": "levelsolved.com/wp-content/uploads/2019/11/Genshin-Impact-Logo.png"
   },
   {
     "id": 4,
@@ -37,6 +43,8 @@
     "sizeX": 2,
     "sizeY": 4,
     "builderIds": [0],
-    "creatorLink": "nasa.gov"
+    "creatorName": "NASA",
+    "creatorLink": "nasa.gov",
+    "source": "images-assets.nasa.gov/image/as11-40-5903/as11-40-5903~orig.jpg"
   }
 ]

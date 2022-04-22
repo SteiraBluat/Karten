@@ -30,7 +30,6 @@ function loadMaps()
         });
 }
 
-
 function displayMaps(maps)
 {
     let content = document.getElementById("maps");
@@ -184,9 +183,18 @@ function getMapCredits(map)
 {
     return "" +
         "<tr>" +
-        "   <td>Quelle:</td>" +
-        "   <td><a href='" + "https://" + map.creatorLink + "' target='_blank' rel='noopener noreferrer'>" +
-                    map.creatorLink + "</a></td>" +
+        "   <td>Creator:</td>" +
+        "   <td>" +
+        "       <a href='" + "https://" + map.creatorLink + "' target='_blank' rel='noopener noreferrer'>" +
+                    map.creatorName +
+        "       </a>" +
+        "   </td>" +
+        "</tr>" +
+        "<tr>" +
+        "   <td colspan=\"2\">" +
+        "       <a href='" + "https://" + map.source + "' target='_blank' rel='noopener noreferrer'>" +
+        "           Quelle</a>" +
+        "   </td>" +
         "</tr>";
 }
 
