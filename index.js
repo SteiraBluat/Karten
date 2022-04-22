@@ -53,7 +53,7 @@ function displayMaps(maps)
 
 function mapToString(map)
 {
-    let result = "" +
+    return "" +
         "<div class='form-control' style='margin-bottom: 20px; height: 98%'>" +
             getMapImage(map) +
         "   <table class='table table-striped'>" +
@@ -65,7 +65,6 @@ function mapToString(map)
                 getMapCredits(map) +
         "   </table>" +
         "</div>";
-    return result;
 }
 
 function getMapImage(map)
@@ -81,12 +80,11 @@ function getMapImage(map)
 
 function getMapId(map)
 {
-    let result = "" +
+    return  "" +
         "<tr>" +
         "   <td>Nr.:</td>" +
         "   <td>" + map.id + "</td>" +
         "</tr>";
-    return result;
 }
 
 function getMapPrice(map)
@@ -126,7 +124,7 @@ function getMapSize(map)
 {
     let amount = map.sizeX * map.sizeY;
 
-    let result = "" +
+    return "" +
         "<tr>" +
         "   <td>Anzahl der Karten:</td>" +
         "   <td>" + amount + "</td>" +
@@ -139,7 +137,6 @@ function getMapSize(map)
         "   <td>Breite:</td>" +
         "   <td>" + map.sizeX + "</td>" +
         "</tr>";
-    return result;
 }
 
 function getMapBuilders(map)
