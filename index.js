@@ -55,7 +55,7 @@ function displayMaps(maps)
 function mapToString(map)
 {
     let result = "" +
-        "<div class='form-control'style='margin-bottom: 20px'>" +
+        "<div class='form-control'style='margin-bottom: 20px; height: 98%'>" +
             getMapImage(map) +
         "   <table class='table table-striped'>" +
         "       <tr><th colspan=\"2\">" + map.name + "</th></tr>" +
@@ -72,7 +72,7 @@ function mapToString(map)
 function getMapImage(map)
 {
     return "<div style='text-align: center; margin-bottom: 10px'><img src='" + imgDir + "/" + map.id +
-        ".png' style='max-height: 1000px; max-width: 100%' height='100%'></div>";
+        ".png' class='mapImg' height='300px'></div>";
 }
 
 function getMapId(map)
@@ -175,7 +175,7 @@ function getMapCredits(map)
 {
     return "" +
         "<tr>" +
-        "   <td>Credits:</td>" +
+        "   <td>Quelle:</td>" +
         "   <td><a href='" + "https://" + map.creatorLink + "' target='_blank' rel='noopener noreferrer'>" +
                     map.creatorLink + "</a></td>" +
         "</tr>";
