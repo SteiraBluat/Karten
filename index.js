@@ -157,18 +157,18 @@ function getMapCorridor(map)
 function getMapCategories(map)
 {
     let result = ``;
-    let categories = map.categories;
+    let categoriesOfMap = map.categories;
 
-    for(let i = 0;i < categories.length;i++)
+    for(let i = 0;i < categoriesOfMap.length;i++)
     {
         if(i === 0)
         {
-            if(categories.length === 1)
+            if(categoriesOfMap.length === 1)
             {
                 result += `
                 <tr style="border-bottom: 3px solid #555">
                     <td>Kategorien:</td>
-                    <td>${getCategoryById(categories[i])}</td>
+                    <td>${getCategoryById(categoriesOfMap[i])}</td>
                 </tr>`;
             }
             else
@@ -176,18 +176,18 @@ function getMapCategories(map)
                 result += `
                 <tr>
                     <td>Kategorien:</td>
-                    <td>${getCategoryById(categories[i])}</td>
+                    <td>${getCategoryById(categoriesOfMap[i])}</td>
                 </tr>`;
             }
         }
         else
         {
-            if(i === categories.length - 1)
+            if(i === categoriesOfMap.length - 1)
             {
                 result += `
                 <tr style="border-bottom: 3px solid #555">
                     <td></td>
-                    <td>${getCategoryById(categories[i])}</td>
+                    <td>${getCategoryById(categoriesOfMap[i])}</td>
                 </tr>`;
             }
             else
@@ -195,7 +195,7 @@ function getMapCategories(map)
                 result += `
                 <tr>
                     <td></td>
-                    <td>${getCategoryById(categories[i])}</td>
+                    <td>${getCategoryById(categoriesOfMap[i])}</td>
                 </tr>`;
             }
         }
