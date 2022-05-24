@@ -52,18 +52,18 @@ function displayMaps(maps)
 
 function mapToString(map)
 {
-    return "" +
-        "<div class='form-control' style='margin-bottom: 20px; height: 98%'>" +
-            getMapImage(map) +
-        "   <table class='table table-striped'>" +
-        "       <tr><th colspan=\"2\">" + map.name + "</th></tr>" +
-                getMapId(map) +
-                getMapPrice(map) +
-                getMapSize(map) +
-                getMapBuilders(map) +
-                getMapCredits(map) +
-        "   </table>" +
-        "</div>";
+    return `
+        <div class="form-control" style="margin-bottom: 20px; height: 98%">
+            ${getMapImage(map)}
+            <table class="table table-striped">
+                <tr><th colspan="2">${map.name}</th></tr>
+                ${getMapId(map)}
+                ${getMapPrice(map)}
+                ${getMapSize(map)}
+                ${getMapBuilders(map)}
+                ${getMapCredits(map)}
+            </table>
+        </div>`;
 }
 
 function getMapImage(map)
