@@ -80,8 +80,8 @@ function mapToString(map)
                     </button>
                 </td></tr>
             </table>
-            <div id="details_${map.id}" class="collapse col-sm-2 bg-light text-black" style="position: absolute; width: 94%">
-                <table class="table table-striped" style="width: 100%">
+            <div id="details_${map.id}" class="collapse col-sm-2 bg-light text-black" style="position: absolute; width: 94%; border-radius: 7px">
+                <table class="table table-striped" style="width: 100%" border="3px" frame="border">
                     ${getMapCorridor(map)}
                     ${getMapCategories(map)}
                     ${getMapSize(map)}
