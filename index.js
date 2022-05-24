@@ -1,9 +1,13 @@
 const mapsJson = "./data/maps.json";
 const builderJson = "./data/builder.json";
+const categoriesJson = "./data/categories.json";
 const imgDir = "./images/maps";
 
 var allMaps;
 var allBuilders = [];
+var allCategories = [];
+
+// ToDo: Filter by categories
 
 function onLoad()
 {
@@ -26,8 +30,18 @@ function loadMaps()
         .then(response => response.json())
         .then(data => {
             allMaps = data;
-            displayMaps(data);
+            loadCategories();
         });
+}
+
+function loadCategories()
+{
+    fetch(categoriesJson)
+        .then(response => response.json())
+        .then(data => {
+            allCategories = data;
+            displayMaps(allMaps);
+        })
 }
 
 function displayMaps(maps)
@@ -53,16 +67,28 @@ function displayMaps(maps)
 function mapToString(map)
 {
     return `
-        <div class="form-control" style="margin-bottom: 20px; height: 98%">
+        <div class="form-control" style="margin-bottom: 20px; height: 98%; position: relative">
             ${getMapImage(map)}
             <table class="table table-striped">
                 <tr><th colspan="2">${map.name}</th></tr>
                 ${getMapId(map)}
                 ${getMapPrice(map)}
-                ${getMapSize(map)}
-                ${getMapBuilders(map)}
-                ${getMapCredits(map)}
+                <tr><td colspan="2">
+                    <button type="button" class="btn btn-secondary" data-bs-toggle="collapse" 
+                    data-bs-target="#details_${map.id}" style="width: 100%">
+                        Weitere Deteils Anzeigen
+                    </button>
+                </td></tr>
             </table>
+            <div id="details_${map.id}" class="collapse col-sm-2 bg-light text-black" style="position: absolute; width: 94%">
+                <table class="table table-striped" style="width: 100%">
+                    ${getMapCorridor(map)}
+                    ${getMapCategories(map)}
+                    ${getMapSize(map)}
+                    ${getMapBuilders(map)}
+                    ${getMapCredits(map)}
+                </table>
+            </div>
         </div>`;
 }
 
@@ -95,7 +121,7 @@ function getMapPrice(map)
     {
         price = map.priceWithAc.toLocaleString("en").replaceAll(",", ".") + "$";
         result += "" +
-            "<tr style='border-bottom: 3px solid #555'>" +
+            "<tr>" +
             "   <td>Preis mit AC:</td>" +
             "   <td>" + price + "</td>" +
             "</tr>";
@@ -111,12 +137,84 @@ function getMapPrice(map)
 
         price = map.priceWithoutAc.toLocaleString("en").replaceAll(",", ".") + "$";
         result += "" +
-            "<tr style='border-bottom: 3px solid #555'>" +
+            "<tr>" +
             "   <td>Preis ohne AC:</td>" +
             "   <td>" + price + "</td>" +
             "</tr>";
     }
     return result;
+}
+
+function getMapCorridor(map)
+{
+    return `
+        <tr>
+            <td>Gang</td>
+            <td>${map.corridor}</td>
+        </tr>`
+}
+
+function getMapCategories(map)
+{
+    let result = ``;
+    let categories = map.categories;
+
+    for(let i = 0;i < categories.length;i++)
+    {
+        if(i === 0)
+        {
+            if(categories.length === 1)
+            {
+                result += `
+                <tr style="border-bottom: 3px solid #555">
+                    <td>Kategorien:</td>
+                    <td>${getCategoryById(categories[i])}</td>
+                </tr>`;
+            }
+            else
+            {
+                result += `
+                <tr>
+                    <td>Kategorien:</td>
+                    <td>${getCategoryById(categories[i])}</td>
+                </tr>`;
+            }
+        }
+        else
+        {
+            if(i === categories.length - 1)
+            {
+                result += `
+                <tr style="border-bottom: 3px solid #555">
+                    <td></td>
+                    <td>${getCategoryById(categories[i])}</td>
+                </tr>`;
+            }
+            else
+            {
+                result += `
+                <tr>
+                    <td></td>
+                    <td>${getCategoryById(categories[i])}</td>
+                </tr>`;
+            }
+        }
+    }
+    return result;
+}
+
+function getCategoryById(id)
+{
+    let category;
+    for(let i = 0;i < allCategories.length;i++)
+    {
+        if(allCategories[i].id === id)
+        {
+            category = allCategories[i].name;
+            break;
+        }
+    }
+    return category;
 }
 
 function getMapSize(map)
