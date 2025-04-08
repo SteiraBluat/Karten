@@ -44,7 +44,7 @@
   {
     "id": 4,
     "name": "Neil Armstrong",
-    "priceWithAc": 10000,
+    "priceWithAc": 15000,
     "priceWithoutAc": 0,
     "categories": [3],
     "corridor": 1,
@@ -54,5 +54,19 @@
     "creatorName": "NASA",
     "creatorLink": "nasa.gov",
     "source": "images-assets.nasa.gov/image/as11-40-5903/as11-40-5903~orig.jpg"
+  },
+  {
+    "id": 5,
+    "name": "Der Kuss",
+    "priceWithAc": 20000,
+    "priceWithoutAc": 0,
+    "categories": [4],
+    "corridor": 1,
+    "sizeX": 3,
+    "sizeY": 3,
+    "builderIds": [0],
+    "creatorName": "Gustav Klimt",
+    "creatorLink": "",
+    "source": ""
   }
 ]

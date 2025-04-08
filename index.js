@@ -94,7 +94,7 @@ function mapToString(map)
 
 function getMapImage(map)
 {
-    let imgUrl = imgDir + "/" + map.id + ".jpg";
+    let imgUrl = imgDir + "/" + map.id + ".png";
     return "" +
         "<div style='text-align: center; margin-bottom: 10px'>" +
         "   <a href='" + imgUrl + "' target=\"_blank\" rel=\"noopener noreferrer\">" +
